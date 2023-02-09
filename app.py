@@ -1,9 +1,11 @@
 from tkinter import *
+from entry_page import *
 
 
 class App:
     def __init__(self):
         self.root = Tk()
+        EntryPage(self.root)
         self.root.mainloop()
 
 
