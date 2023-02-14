@@ -1,21 +1,16 @@
 from tkinter import *
 
 from tklib import get_image
-from tkstyle import label_style1, button_style1
+from tkstyle import label_style1, button_style1, background_frame, change_page
+from competition_page import *
 
 
-class EntryPage:
-    def __init__(self, master, width, height):
+class EntryPage(Frame):
+    def __init__(self, master):
+        Frame.__init__(self)
         self.master = master
-        self.master.title("Golden Piggy")
 
-        self.mainframe = Frame(
-            self.master,
-            background='#063D25',
-            width=width,
-            height=height,
-        )
-        self.mainframe.grid(column=1, row=1)
+        self.mainframe = background_frame(self.master, '#063D25')
 
         self.content_frame = Frame(
             self.mainframe,
@@ -36,5 +31,26 @@ class EntryPage:
         )
         self.logo_image['background'] = '#063D25'
 
-        label_style1(self.content_frame, 'Golden Piggy', 1, 2)
-        button_style1(self.content_frame, 'Start', 1, 3, 0, 20)
+        self.title = Label(
+            self.content_frame,
+            text='Golden Piggy'
+        )
+        self.title.grid(
+            column=1,
+            row=2
+        )
+        label_style1(self.title)
+
+        self.start_button = Button(
+            self.content_frame,
+            text='Start',
+            command=lambda: change_page(self.mainframe, CompetitionPage, self.master)
+        )
+        self.start_button.grid(
+            column=1,
+            row=3,
+            padx=0,
+            pady=20
+        )
+        button_style1(self.start_button)
+
