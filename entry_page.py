@@ -39,7 +39,7 @@ class EntryPage(Frame):
             column=1,
             row=2
         )
-        label_style1(self.title)
+        label_style1(self.title, 24)
 
         self.start_button = Button(
             self.content_frame,
@@ -52,5 +52,4 @@ class EntryPage(Frame):
             padx=0,
             pady=20
         )
-        button_style1(self.start_button)
-
+        button_style1(self.start_button, 18)

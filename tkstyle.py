@@ -21,14 +21,14 @@ def background_frame(parent, background):
     return background
 
 
-def label_style1(label):
-    label['font'] = ('Roboto Slab', 24)
+def label_style1(label, size):
+    label['font'] = ('Roboto Slab', size)
     label['background'] = '#063D25'
     label['foreground'] = '#F5F4F3'
 
 
-def button_style1(button):
-    button['font'] = ('Roboto Slab', 18)
+def button_style1(button, size):
+    button['font'] = ('Roboto Slab', size)
     button['background'] = '#F5F4F3'
     button['foreground'] = '#063D25'
     button['relief'] = FLAT
@@ -36,50 +36,35 @@ def button_style1(button):
     button['activeforeground'] = '#063D25'
 
 
-def button_green_style(parent, text, column, row, paddx, paddy, sticky):
-    button = Button(
-        parent,
-        text=text,
-        font=('Roboto Slab', 18),
-        background='#00F084',
-        foreground='#063D25',
-        relief=FLAT,
-        activebackground='#006437',
-        activeforeground='#F5F4F3'
-    )
-    button.grid(
-        column=column,
-        row=row,
-        padx=paddx,
-        pady=paddy,
-        sticky=sticky
-    )
-    return button
-
-
-def button_style(button):
-    button['font'] = ('Roboto Slab', 18)
-    button['background'] = '#00F084'
-    button['foreground'] = '#063D25'
+def button_green_style(button, size):
+    button['font'] = ('Roboto Slab', size)
+    button['background'] = '#00F084',
+    button['foreground'] = '#063D25',
     button['relief'] = FLAT
     button['activebackground'] = '#006437'
     button['activeforeground'] = '#F5F4F3'
 
 
-def listbox_style1(parent, width, height, column, row, padx=0, pady=0):
-    listbox = Listbox(
-        parent,
-        width=width,
-        height=height,
-        background='#F5F4F3',
-        font=('Roboto Slab', 16),
-        foreground='#363636',
-        selectbackground='#00F084'
-    )
-    listbox.grid(
-        column=column,
-        row=row,
-        padx=padx,
-        pady=pady
-    )
-    return listbox
+def button_red_style(button, size):
+    button['font'] = ('Roboto Slab', size)
+    button['background'] = '#B01900'
+    button['foreground'] = '#F5F4F3'
+    button['relief'] = FLAT
+    button['activebackground'] = '#640E00'
+    button['activeforeground'] = '#F5F4F3'
+
+
+def button_yellow_style(button, size):
+    button['font'] = ('Roboto Slab', size)
+    button['background'] = '#F0AA18'
+    button['foreground'] = '#A37108'
+    button['relief'] = FLAT
+    button['activebackground'] = '#A37108'
+    button['activeforeground'] = '#755426'
+
+
+def listbox_style1(listbox, size):
+    listbox['background'] = '#F5F4F3'
+    listbox['font'] = ('Roboto Slab', size)
+    listbox['foreground'] = '#363636',
+    listbox['selectbackground'] = '#00F084'
