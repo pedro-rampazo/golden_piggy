@@ -38,44 +38,65 @@ class CompetitionPage(Frame):
         for x in range(8):
             self.competition_list.insert(END, f'Competition {x}')
 
-        self.ok_button = Button(
+        self.button_frame = Frame(
             self.mainframe,
-            text='OK',
-            width=10,
-            command=lambda: change_page(self.mainframe, HunchMatchPage, self.master)
+            background='#063D25'
         )
-        self.ok_button.grid(
+        self.button_frame.grid(
             column=2,
-            row=3,
-            padx=30,
-            pady=30
+            row=2,
+            sticky=NSEW
         )
-        button_style1(self.ok_button, 18)
 
         self.new_button = Button(
-            self.mainframe,
-            text='New',
-            width=10
+            self.button_frame,
+            text='New'
         )
         self.new_button.grid(
             column=1,
-            row=3,
-            padx=20,
-            pady=30,
-            sticky=W
+            row=1,
+            padx=10,
+            pady=10,
+            sticky=EW
         )
         button_green_style(self.new_button, 18)
 
+        self.edit_button = Button(
+            self.button_frame,
+            text='Edit'
+        )
+        self.edit_button.grid(
+            column=1,
+            row=2,
+            padx=10,
+            pady=10,
+            sticky=EW
+        )
+        button_yellow_style(self.edit_button, 18)
+
         self.remove_button = Button(
-            self.mainframe,
-            text='Remove',
-            width=10
+            self.button_frame,
+            text='Remove'
         )
         self.remove_button.grid(
             column=1,
             row=3,
-            padx=20,
-            pady=30,
-            sticky=E
+            padx=10,
+            pady=10,
+            sticky=EW
         )
         button_red_style(self.remove_button, 18)
+
+        self.ok_button = Button(
+            self.button_frame,
+            text='OK',
+            command=lambda: change_page(self.mainframe, HunchMatchPage, self.master)
+        )
+        self.ok_button.grid(
+            column=1,
+            row=4,
+            padx=10,
+            pady=10,
+            sticky=EW
+        )
+        button_style1(self.ok_button, 18)

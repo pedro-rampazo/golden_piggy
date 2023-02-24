@@ -2,6 +2,7 @@ from tkinter import *
 
 from tkstyle import *
 from tklib import get_image
+from classification_page import *
 
 
 class HunchMatchPage(Frame):
@@ -36,7 +37,11 @@ class HunchMatchPage(Frame):
         )
         button_style1(self.competition_button, 18)
 
-        self.classification_button = Button(self.mainframe, text='Classification')
+        self.classification_button = Button(
+            self.mainframe,
+            text='Classification',
+            command=lambda: change_page(self.mainframe, ClassificationPage, self.master)
+        )
         self.classification_button.grid(
             column=4,
             row=1,
@@ -197,40 +202,65 @@ class HunchMatchPage(Frame):
         self.hunch_button_frame.columnconfigure(2, weight=1)
         self.hunch_button_frame.columnconfigure(3, weight=1)
 
-        self.add_hunch_button = Button(self.hunch_button_frame, text='Add')
-        self.add_hunch_button.grid(
-            column=1,
+        self.count_button = Button(self.hunch_button_frame, text='Count')
+        self.count_button.grid(
+            column=3,
             row=1,
-            sticky=EW
+            sticky=E
         )
-        button_green_style(self.add_hunch_button, 14)
+        button_white_style(self.count_button, 14)
 
         self.edit_hunch_button = Button(self.hunch_button_frame, text='Edit')
         self.edit_hunch_button.grid(
-            column=2,
-            row=1,
-            padx=20,
-            sticky=EW
+            column=3,
+            row=1
         )
         button_yellow_style(self.edit_hunch_button, 14)
 
-        self.remove_hunch_button = Button(self.hunch_button_frame, text='Remove')
-        self.remove_hunch_button.grid(
-            column=3,
-            row=1,
-            sticky=EW
-        )
-        button_red_style(self.remove_hunch_button, 14)
-
-        self.hunch_listbox = Listbox(self.mainframe)
-        self.hunch_listbox.grid(
+        self.hunch_frame = Frame(self.mainframe, background='#063D25')
+        self.hunch_frame.grid(
             column=3,
             row=4,
             padx=20,
             pady=20,
             sticky=NSEW,
-            columnspan=2
+            columnspan=2,
+            rowspan=2
         )
-        listbox_style1(self.hunch_listbox, 14)
-        for x in range(8):
-            self.hunch_listbox.insert(END, f'Hunch {x}')
+        self.hunch_frame.columnconfigure(1, weight=1)
+        self.hunch_frame.columnconfigure(2, weight=1)
+        self.hunch_frame.columnconfigure(3, weight=1)
+
+        for item in range(1, 9):
+            self.hunch_name_label = Label(
+                self.hunch_frame,
+                text='Hunch Name'
+            )
+            self.hunch_name_label.grid(
+                column=1,
+                row=item,
+                pady=10
+            )
+            label_style1(self.hunch_name_label, 14)
+
+            self.hunch_result_label = Label(
+                self.hunch_frame,
+                text='0 X 0'
+            )
+            self.hunch_result_label.grid(
+                column=2,
+                row=item,
+                pady=10
+            )
+            label_style1(self.hunch_result_label, 14)
+
+            self.hunch_points_label = Label(
+                self.hunch_frame,
+                text='+10'
+            )
+            self.hunch_points_label.grid(
+                column=3,
+                row=item,
+                pady=10
+            )
+            label_style1(self.hunch_points_label, 14)

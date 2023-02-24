@@ -7,6 +7,8 @@ def change_page(frame, _class, parent):
     _class(parent)
 
 
+# FRAME
+
 def background_frame(parent, background):
     background = Frame(
         parent,
@@ -20,11 +22,15 @@ def background_frame(parent, background):
     )
     return background
 
+# LABEL
+
 
 def label_style1(label, size):
     label['font'] = ('Roboto Slab', size)
     label['background'] = '#063D25'
     label['foreground'] = '#F5F4F3'
+
+# BUTTON
 
 
 def button_style1(button, size):
@@ -61,6 +67,17 @@ def button_yellow_style(button, size):
     button['relief'] = FLAT
     button['activebackground'] = '#A37108'
     button['activeforeground'] = '#755426'
+
+
+def button_white_style(button, size):
+    button['font'] = ('Roboto Slab', size)
+    button['background'] = '#F5F4F3'
+    button['foreground'] = '#363636'
+    button['relief'] = FLAT
+    button['activebackground'] = '#FFFFFF',
+    button['activeforeground'] = '#363636'
+
+# LISTBOX
 
 
 def listbox_style1(listbox, size):
