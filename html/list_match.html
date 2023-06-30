@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/list_match_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&display=swap" rel="stylesheet">
+    <title>Golden Piggy - Matches</title>
+</head>
+<body>
+    <menu>
+        <img id="logo" src="../images/logo.svg" alt="Golden Piggy">
+        <h1>Golden Piggy</h1>
+        <img id="menu-icon" src="../images/match_player_icon.svg" alt="menu" onclick="Modal.open('#pm-modal-overlay')">
+    </menu>
+
+    <main>
+        
+        <section id="list-matches">
+            <h2>Partidas</h2>
+        </section>
+
+        <section id="ma-section"></section>
+
+    </main>
+
+    <section id="pm-modal-overlay">
+        <div id="pm-modal">
+            <div id="close-container">
+                <img src="../images/close_icon.svg" alt="Close" onclick="Modal.close('#pm-modal-overlay')">
+            </div>
+    
+            <div id="button-container">
+                <a href="../html/player.html">
+                    <button>Jogadores</button>
+                </a>
+                <a href="../html/list_match.html">
+                    <button>Partidas</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="nwma-modal-overlay">
+        <div id="nwma-modal">
+            <div>
+                <h3>Partida:</h3>
+                <img id="close-icon" src="../images/close_icon.svg" alt="Close" onclick="Modal.close('#nwma-modal-overlay')">
+            </div>
+            
+            <div>
+                <input name="hmtm-input" class="team" type="text" placeholder="Home">
+                <input name="hmtmgl-input" class="goal" type="number" placeholder="0">
+                <h3>X</h3>
+                <input name="awtmgl-input" class="goal" type="number" placeholder="0">
+                <input name="awtm-input" class="team" type="text" placeholder="Away">
+            </div>
+            
+            <div id="date-time">
+                <input name="date" type="date">
+                <input name="time" type="time">
+            </div>
+            
+            <div id="match-info">
+                <input name="stadium-input" type="text" placeholder="Estádio">
+                <input name="championship-input" type="text" placeholder="Campeonato">
+                <input name="transmission-input" type="text" placeholder="Transmissão">
+            </div>
+            
+            <div>
+                <button onclick="Match.add()">Salvar</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="down-menu">
+        <div class="down-menu-cell">
+            <a href="../html/info.html">
+                <button>
+                    <img src="../images/info_icon.svg" alt="Information">
+                    Info
+                </button>
+            </a>
+        </div>
+        <div class="down-menu-cell">
+            <button id="add-bttn">
+                <img src="../images/add_icon.svg" alt="Add" onclick="Modal.open('#nwma-modal-overlay')">
+            </button>
+        </div>
+        <div class="down-menu-cell">
+            <a href="../html/classification.html">
+                <button>
+                    <img src="../images/classification.svg" alt="Classification">
+                    Classificação
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <script src="../js/list_match_script.js"></script>
+
+</body>
+</html>

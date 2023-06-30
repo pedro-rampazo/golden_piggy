@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/match_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&display=swap" rel="stylesheet">
+    <title>Golden Piggy - Match</title>
+</head>
+<body>
+    <menu>
+        <img id="logo" src="../images/logo.svg" alt="Golden Piggy">
+        <h1>Golden Piggy</h1>
+        <img id="menu-icon" src="../images/match_player_icon.svg" alt="menu" onclick="Modal.open('#pm-modal-overlay')">
+    </menu>
+    <main>
+        <section id="match" onclick="Modal.openEditMatch()">
+            <div class="team">
+                <img id="hmtm-emblem" src="../images/palmeiras.svg" alt="Palmeiras">
+                <h2 name="hmtm-name">Palmeiras</h2>
+            </div>
+            <div id="score">
+                <h3 name="hmtmgl-text" class="goal-board">4</h3>
+                <h3>X</h3>
+                <h3 name="awtmgl-text" class="goal-board">0</h3>
+            </div>
+            <div class="team">
+                <img id="awtm-emblem" src="../images/palmeiras.svg" alt="Palmeiras">
+                <h2 name="awtm-name">Plameiras</h2>
+            </div>
+        </section>
+
+        <section id="header-hunch">
+            <div class="header-hunch-cell">
+                <h4>Jogador</h4>
+            </div>
+            <div class="header-hunch-cell">
+                <h4>Palpite</h4>
+            </div>
+            <div class="header-hunch-cell">
+                <h4>Pontuação</h4>
+                <h4>></h4>
+            </div>
+        </section>
+
+        <section id="hunch-section"></section>
+
+    </main>
+
+    <section id="confirmation-modal-overlay">
+        <div id="confirmation-modal">
+            <div>
+                <h3>Confirma?</h3>
+            </div>
+            <div>
+                <button id="yes-bttn" class="default-bttn">Sim</button>
+                <button id="no-bttn" class="remove-bttn">Não</button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="pm-modal-overlay">
+        <div id="pm-modal">
+            <div id="close-container">
+                <img src="../images/close_icon.svg" alt="Close" onclick="Modal.close('#pm-modal-overlay')">
+            </div>
+    
+            <div id="button-container">
+                <a href="../html/player.html">
+                    <button>Jogadores</button>
+                </a>
+                <a href="../html/list_match.html">
+                    <button>Partidas</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="ma-modal-overlay">
+        <div id="ma-modal">
+            <div>
+                <h3>Partida:</h3>
+                <img class="close-icon" src="../images/close_icon.svg" alt="Close" onclick="Behavior.restoreMaModalOverlay('ma-modal', true)">
+            </div>
+            
+            <div>
+                <input id="hmtm-name" class="team" type="text" placeholder="Home" disabled>
+                <input name="hmtm-goals" class="goal" type="number" placeholder="0" disabled>
+                <h3>X</h3>
+                <input name="awtm-goals" class="goal" type="number" placeholder="0" disabled>
+                <input id="awtm-name" class="team" type="text" placeholder="Away" disabled>
+            </div>
+            
+            <div id="date-time">
+                <input name="date" type="date" disabled>
+                <input name="time" type="time" disabled>
+            </div>
+            
+            <div id="match-info">
+                <input name="stadium" type="text" placeholder="Estádio" disabled>
+                <input name="championship" type="text" placeholder="Campeonato" disabled>
+                <input name="transmission" type="text" placeholder="Transmissão" disabled>
+            </div>
+            
+            <div>
+                <img id="edit-icon" src="../images/edit_icon.svg" alt="Edit" onclick="Behavior.edit('ma-modal', false)">
+                <button onclick="Modal.updateConfirmationMaModal()">Salvar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="hu-modal-overlay">
+        <div id="hu-modal">
+            <div>
+                <h3 id="hunch-title">Palpite:</h3>
+                <img class="close-icon" src="../images/close_icon.svg" alt="Close" onclick="Modal.close('#hu-modal-overlay')">
+            </div>
+            
+            <div>
+                <select name="player" id="player" disabled>
+                    <option value="player1">Player 1</option>
+                    <option value="player2">Player 2</option>
+                    <option value="player3">Player 3</option>
+                </select>
+            </div>
+            
+            <div>
+                <h3 class="hunch-text">Casa</h3>
+                <input class="goal-modal" type="number" placeholder="0" disabled>
+                <h3 class="hunch-text">X</h3>
+                <input class="goal-modal" type="number" placeholder="0" disabled>
+                <h3 class="hunch-text">Visitante</h3>
+            </div>
+            
+            <div>
+                <h3 class="hunch-text">Pontuação:</h3>
+                <h3 class="hunch-text" id="score-hunch">+10</h3>
+            </div>
+            
+            <div>
+                <img src="../images/edit_icon.svg" alt="Edit" onclick="Behavior.edit('hu-modal')">
+                <button id="remove-bttn">Excluir</button>
+                <button id="default-bttn">Salvar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="nwhu-modal-overlay">
+        <div id="nwhu-modal">
+            <div>
+                <h3 id="hunch-title">Palpite:</h3>
+                <img class="close-icon" src="../images/close_icon.svg" alt="Close" onclick="Modal.close('#nwhu-modal-overlay')">
+            </div>
+            
+            <div>
+                <select name="player" id="player-hunch"></select>
+            </div>
+            
+            <div>
+                <h3 class="hunch-text">Casa</h3>
+                <input name="hmtmgls-input" class="goal-modal" type="number" placeholder="0">
+                <h3 class="hunch-text">X</h3>
+                <input name="awtmgls-input" class="goal-modal" type="number" placeholder="0">
+                <h3 class="hunch-text">Visitante</h3>
+            </div>
+            
+            <div>
+                <button id="default-bttn" onclick="Hunch.add()">Salvar</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="down-menu">
+        <div class="down-menu-cell">
+            <a href="../html/info.html">
+                <button>
+                    <img src="../images/info_icon.svg" alt="Information">
+                    Info
+                </button>
+            </a>              
+        </div>
+        <div class="down-menu-cell">
+            <button id="add-bttn">
+                <img src="../images/add_icon.svg" alt="Add" onclick="Modal.openNewHunch('#nwhu-modal-overlay')">
+            </button>
+        </div>
+        <div class="down-menu-cell">
+            <a href="../html/classification.html">
+                <button>
+                    <img src="../images/classification.svg" alt="Classification">
+                    Classificação
+                </button>
+            </a>
+        </div>
+    </div>
+    
+    <script src="../js/match_script.js"></script>
+</body>
+</html>

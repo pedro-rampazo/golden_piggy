@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/player_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&display=swap" rel="stylesheet">
+    <title>Golden Piggy - Player</title>
+</head>
+<body>
+    
+    <menu>
+        <img id="logo" src="../images/logo.svg" alt="Golden Piggy">
+        <h1>Golden Piggy</h1>
+        <img id="menu-icon" src="../images/match_player_icon.svg" alt="menu" onclick="Modal.open('#pm-modal-overlay')">
+    </menu>
+
+    <main>
+        
+        <section id="header-player">
+            <h2>Jogadores</h2>
+        </section>
+
+        <section id="pl-section"></section>
+
+    </main>
+
+    <section id="confirmation-modal-overlay">
+        <div id="confirmation-modal">
+            <div>
+                <h3>Confirma?</h3>
+            </div>
+            <div>
+                <button id="yes-bttn" class="default-bttn">Sim</button>
+                <button id="no-bttn" class="remove-bttn">Não</button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="pm-modal-overlay">
+        <div id="pm-modal">
+            <div id="close-container">
+                <img src="../images/close_icon.svg" alt="Close" onclick="Modal.close('#pm-modal-overlay')">
+            </div>
+    
+            <div id="button-container">
+                <a href="../html/player.html">
+                    <button>Jogadores</button>
+                </a>
+                <a href="../html/list_match.html">
+                    <button>Partidas</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="pl-modal-overlay">
+        <div id="pl-modal">
+            <div>
+                <h3>Jogador:</h3>
+                <img id="close-icon" src="../images/close_icon.svg" alt="Close">
+            </div>
+            <div>
+                <input id="player-name-inpt" type="text" placeholder="player" disabled>
+                <img id="edit-icon" src="../images/edit_icon.svg" alt="Edit" onclick="Behavior.edit('player-name-inpt')">
+            </div>
+            
+            <div id="player-info">
+                <h3>Pontos:</h3>
+                <h3 id="point-label">--</h3>
+                <h3>Acertos:</h3>
+                <h3 id="hit-label">--</h3>
+            </div>
+
+            <div>
+                <button id="save-bttn" class="default-bttn">Salvar</button>
+                <button id="delete-bttn" class="remove-bttn">Excluir</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="nwpl-modal-overlay">
+        <div id="nwpl-modal">
+            <div>
+                <h3>Jogador:</h3>
+                <img id="nwcl-icon" src="../images/close_icon.svg" alt="Close" onclick="Behavior.restoreNwPlModalOverlay()">
+            </div>
+            <div>
+                <input id="nwplnm-input" type="text" placeholder="player">
+            </div>
+            <div>
+                <button class="default-bttn" onclick="Player.add()">Salvar</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="down-menu">
+        <div class="down-menu-cell">
+            <a href="../html/info.html">
+                <button>
+                    <img src="../images/info_icon.svg" alt="Information">
+                    Info
+                </button>
+            </a>
+        </div>
+        <div class="down-menu-cell">
+            <button id="add-bttn">
+                <img src="../images/add_icon.svg" alt="Add" onclick="Modal.open('#nwpl-modal-overlay')">
+            </button>
+        </div>
+        <div class="down-menu-cell">
+            <a href="../html/classification.html">
+                <button>
+                    <img src="../images/classification.svg" alt="Classification">
+                    Classificação
+                </button>
+            </a>
+        </div>
+    </div>
+    
+    <script src="../js/player_script.js"></script>
+
+</body>
+</html>
