@@ -2,6 +2,14 @@
 
 ## Índice
 
+- [Descrição](https://github.com/pedro-rampazo/golden_piggy#descrição)
+- [Status do Projeto](https://github.com/pedro-rampazo/golden_piggy#status-do-projeto)
+- [Funcionalidades](https://github.com/pedro-rampazo/golden_piggy#funcionalidades)
+- [Acesso ao Projeto](https://github.com/pedro-rampazo/golden_piggy#acesso-ao-projeto)
+- [Tecnologias Utilizadas](https://github.com/pedro-rampazo/golden_piggy#tecnologias-utilizadas)
+- [Pessoas Contribuidoras](https://github.com/pedro-rampazo/golden_piggy#pessoas-contribuidoras)
+- [Conclusão](https://github.com/pedro-rampazo/golden_piggy#conclusão)
+
 ## Descrição
 
 *Golden Piggy* é um jogo de palpites de partidas de futebol desenvolvido em HTML, CSS e JavaScript. Esse projeto foi desenvolvido como trabalho final na disciplina de Desenvolvimento Web I no Instituto Federal de São Paulo (IFSP) em Junho de 2023
@@ -16,7 +24,7 @@ Nesse projeto é possível o cadastro de jogadores participantes do jogo, cadast
 
 ## Acesso ao projeto
 
-Colar link do deploy do projeto
+[Golden Piggy Project](https://pedro-rampazo.github.io/golden_piggy/html/home.html)
 
 ## Tecnologias Utilizadas
 
